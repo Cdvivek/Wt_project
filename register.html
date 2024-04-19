@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style_register.css">
+</head>
+<body>
+    <nav>
+        <div class="menu">
+          <div class="logo">
+            <a href="index.html">Code Academy</a>
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="main">
+        <p class="sign" align="center">Sign Up</p>
+        <form class="form2" name="myForm" onsubmit="return validate()" action="php_register.php" method="post">
+            <table>
+                <tr>
+                    <td><input class="box" type="text" name = "email" placeholder=" Email ID "></td>
+                </tr>
+                <tr>
+                    <td><input class="box" type="text" name = "uname" placeholder=" Username "></td>
+                </tr>
+                <tr>
+                    <td><input class="box" type="password" name="pass" placeholder=" Password "></td>
+                </tr>
+                <tr>
+                    <td><input class="box" type="password" name="cpass" placeholder=" Confirm Password "></td>
+                </tr>
+                <tr>
+                    <td><input class="box" type="text" name = "mobno" placeholder=" Mobile Number "></td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="box" name="region">
+                            <option>Select Region</option>
+                            <option>India</option>
+                            <option>Tokyo</option>
+                            <option>England</option>
+                            <option>Brazil</option>
+                            <option>Other</option>
+                        </select>
+                    </td>
+                </tr>
+                
+            </table>
+            <div class="submit">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    <script>
+        function validate()
+        {
+            var email = document.myForm.email.value;
+            var uname = document.myForm.uname.value;
+            var pass = document.myForm.pass.value;
+            var cpass = document.myForm.cpass.value;
+            var mobno = document.myForm.mobno.value;
+
+            if ( email == null || email == "")
+            {
+                alert("Email ID is Mandatory !");
+                return false;
+            }
+
+            if ( uname == null || uname == "")
+            {
+                alert("Username should not be empty !");
+                return false;
+            }
+
+            if ( pass == null || pass == "")
+            {
+                alert("Password Should not be Empty !");
+                return false;
+            }
+
+            if ( pass.length < 6)
+            {
+                
+                alert("Add more letters to password !");
+                
+                return false;
+                
+            }
+
+            if ( cpass != pass )
+            {
+                alert("This should match the previous password !");
+                return false;
+            }
+
+            if ( mobno == null || mobno == "")
+            {
+                alert("Mobile No Should not be Empty !");
+                return false;
+            }
+
+            if (isNaN(mobno))
+            {
+                alert("Mobile No must be Numeric !");
+                return false;
+            }
+
+            if ( mobno.length < 10)
+            {
+                alert("Invalid Mobile No");
+                return false;
+            }
+
+            else
+            {
+                alert("Registration Successfull !");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

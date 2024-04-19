@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style_login.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html">Code Academy</a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="main">
+    <p class="sign" align="center">Log in</p>
+    <form action="php_login.php" method="post" name="myForm" onsubmit="return validate()" class="form1">
+      <input class="un" type="text" align="center" name = "uname" placeholder="Username">
+      <input class="pass" type="password" align="center" name = "pass" placeholder="Password">
+      <!-- <a class="submit" align="center">Log in</a> -->
+      <div><input type="submit" align="center"></div>
+      <p class="forgot" align="center">Forgot Password ?</p>
+    <script>
+      function validate()
+      {
+          var uname = document.myForm.uname.value;
+          var pass = document.myForm.pass.value;
+
+          if ( uname == null || uname == "")
+          {
+              alert("Username should not be empty !");
+              return false;
+          }
+
+          if ( pass == null || pass == "")
+          {
+              alert("Password Should not be Empty !");
+              return false;
+          }
+
+          if ( pass.length < 6)
+            {
+                alert("Add more letters to password !");
+                return false;
+            }
+
+          else
+          {
+              alert("Login Successfull !");
+              return true;
+          }
+      }
+  </script>
+</body>
+
+</html>
